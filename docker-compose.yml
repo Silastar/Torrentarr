@@ -1,0 +1,15 @@
+services:
+  torrent-creator:
+    build: .
+    container_name: torrent-creator
+    stdin_open: true
+    tty: true
+    working_dir: /config
+    env_file:
+      - ./config.env
+    volumes:
+      - /mnt/user/MEDIA:/MEDIA:rw
+      - /mnt/user/TORRENT_MGMT/TORRENT_FILES/TORRENTS_UPLOAD:/TORRENTS:rw
+      - /mnt/user/appdata/torrent-creator:/config:rw
+      - /tmp:/tmp
+    restart: "no"

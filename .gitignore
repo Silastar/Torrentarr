@@ -1,0 +1,21 @@
+# secrets
+config.env
+
+# generated files
+*.torrent
+*.nfo
+
+# logs
+*.log
+
+# python
+__pycache__/
+*.pyc
+
+# editor
+.vscode/
+.idea/
+
+# system
+.DS_Store
+Thumbs.db
