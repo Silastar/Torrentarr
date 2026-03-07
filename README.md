@@ -1,6 +1,10 @@
-# torrent-creator v5
+# Torrentarr v5
 
-`torrent-creator` is a Dockerized Bash tool that generates tracker-ready `.torrent` and `.nfo` files from media already managed by Radarr and Sonarr.
+![Docker Build Status](https://img.shields.io/docker/build/Silastar/torrentarr)
+![Version](https://img.shields.io/github/v/release/Silastar/torrentarr)
+![GitHub Repo](https://img.shields.io/github/stars/Silastar/Torrentarr?style=social)
+
+`Torrentarr` is a Dockerized Bash tool that generates tracker-ready `.torrent` and `.nfo` files from media already managed by Radarr and Sonarr.
 
 It supports:
 
@@ -47,7 +51,7 @@ It supports:
 ## Project layout
 
 ```text
-torrent-creator/
+Torrentarr/
 ├─ Dockerfile
 ├─ docker-compose.yml
 ├─ config.env
