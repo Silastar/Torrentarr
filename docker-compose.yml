@@ -1,7 +1,7 @@
 services:
-  torrent-creator:
+  torrentarr:
     build: .
-    container_name: torrent-creator
+    container_name: torrentarr
     stdin_open: true
     tty: true
     working_dir: /config

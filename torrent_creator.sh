@@ -15,7 +15,7 @@ common_init
 main_menu() {
   while true; do
     echo
-    echo "================ torrent-creator v4 ================"
+    echo "================ Torrentarr v5 ================"
     echo "MEDIA_ROOT  : $MEDIA_ROOT"
     echo "OUTPUT_ROOT : $OUTPUT_ROOT"
     echo "DRY_RUN     : $DRY_RUN"
