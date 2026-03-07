@@ -1,7 +1,8 @@
 # Torrentarr v5
 
-![Docker Build Status](https://img.shields.io/docker/build/Silastar/torrentarr)
-![Version](https://img.shields.io/github/v/release/Silastar/torrentarr)
+![Version](https://img.shields.io/github/v/release/Silastar/Torrentarr)
+![Stars](https://img.shields.io/github/stars/Silastar/Torrentarr?style=social)
+![License](https://img.shields.io/badge/license-not%20set-lightgrey)
 ![GitHub Repo](https://img.shields.io/github/stars/Silastar/Torrentarr?style=social)
 
 `Torrentarr` is a Dockerized Bash tool that generates tracker-ready `.torrent` and `.nfo` files from media already managed by Radarr and Sonarr.
