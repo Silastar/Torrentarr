@@ -113,11 +113,47 @@ Clone the repository:
 git clone https://github.com/Silastar/Torrentarr.git
 cd Torrentarr
 ```
+## Docker Paths Configuration
 
-Start the container:
+Before starting the container, you must adapt the volume paths in `docker-compose.yml` so they match your local media directories.
 
-```bash
+Example configuration:
+
+```yaml
+services:
+  torrentarr:
+    build: .
+    container_name: torrentarr
+
+    volumes:
+      - /mnt/user/MEDIA:/MEDIA
+      - /mnt/user/TORRENTS:/TORRENTS
+      - ./config.env:/config.env
+
+Path Explanation
+
+Container Path	Purpose
+/MEDIA	Root folder containing your Radarr and Sonarr media libraries
+/TORRENTS	Output directory where generated .torrent and .nfo files will be written
+
+Important
+
+The paths on the left side must match your actual server filesystem.
+
+Example for Unraid:
+
+/mnt/user/MEDIA
+/mnt/user/TORRENTS
+
+Example for Linux:
+
+/data/media
+/data/torrents
+
+Once the paths are correct, you can start Torrentarr with:
+
 docker compose up -d --build
+
 ```
 
 Enter the container:
