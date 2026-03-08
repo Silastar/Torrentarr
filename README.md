@@ -13,56 +13,102 @@
 
 **Pack • Share • Automate**
 
-Torrentarr is a Dockerized tool that generates tracker-ready `.torrent` and `.nfo` files from media libraries managed by Radarr and Sonarr.
+<p align="center">
+  <img src="assets/logo.png" width="500">
+</p>
 
-`Torrentarr` is a Dockerized Bash tool that generates tracker-ready `.torrent` and `.nfo` files from media already managed by Radarr and Sonarr.
+<h1 align="center">Torrentarr</h1>
 
-It supports:
+<p align="center">
+<b>Pack • Share • Automate</b>
+</p>
 
-- Movies
-- Series
-- Season packs
-- Full series packs for ended shows
-- Individual episode torrents
-- 4K / HDR / DV detection
-- Audio / subtitle / language tagging
-- Release group reuse when available
-- Direct torrent creation from source media, with optional staging
+<p align="center">
+<img src="https://img.shields.io/github/v/release/Silastar-1976/Torrentarr">
+<img src="https://img.shields.io/github/stars/Silastar-1976/Torrentarr?style=social">
+<img src="https://img.shields.io/github/license/Silastar-1976/Torrentarr">
+<img src="https://img.shields.io/badge/docker-ready-blue">
+<img src="https://img.shields.io/badge/bash-script-green">
+<img src="https://img.shields.io/badge/Radarr-compatible-orange">
+<img src="https://img.shields.io/badge/Sonarr-compatible-yellow">
+</p>
 
 ---
 
-## Features
+Torrentarr is a Dockerized Bash tool that generates tracker-ready `.torrent` and `.nfo` files from media libraries managed by **Radarr** and **Sonarr**.
+
+It automates the creation of properly named torrents using the real metadata of your media files.
+
+---
+
+# Features
 
 ### Movies
-- Match movie folders against Radarr
-- Read the real media file metadata
-- Generate tracker-style names
-- Create `.torrent`
-- Create `.nfo`
+
+* Match movie folders against Radarr
+* Read media metadata automatically
+* Generate tracker-style release names
+* Create `.torrent`
+* Create `.nfo`
 
 ### Series
-- Match series folders against Sonarr
-- Generate:
-  - season packs
-  - episode torrents
-  - full series packs for ended shows
-- Use majority metadata for packs
-- Create `.torrent`
-- Create `.nfo`
+
+* Match series folders against Sonarr
+* Generate:
+
+  * season packs
+  * episode torrents
+  * full series packs for ended shows
+* Use majority metadata for packs
+* Create `.torrent`
+* Create `.nfo`
 
 ### Media detection
-- Resolution: `720p`, `1080p`, `2160p`
-- Video: `H264`, `x265`
-- Audio: `AAC`, `AC3`, `EAC3`, `TrueHD`, `DTS`, `DTS-HD`, `DTS-HD.MA`, `Atmos`
-- HDR: `DV`, `HDR`, `HDR10`, `HDR10PLUS`, `HLG`
-- Source: `WEB`, `WEB-DL`, `WEBRip`, `BluRay`, `Remux`, `HDTV`, `DVDRip`
+
+* Resolution: `720p`, `1080p`, `2160p`
+* Video: `H264`, `x265`
+* Audio: `AAC`, `AC3`, `EAC3`, `TrueHD`, `DTS`, `DTS-HD`, `DTS-HD.MA`, `Atmos`
+* HDR: `DV`, `HDR`, `HDR10`, `HDR10PLUS`, `HLG`
+* Source: `WEB`, `WEB-DL`, `WEBRip`, `BluRay`, `Remux`, `HDTV`, `DVDRip`
 
 ---
 
-## Project layout
+# Installation
 
-```text
+Clone the repository:
+
+```bash
+git clone https://github.com/Silastar-1976/Torrentarr.git
+cd Torrentarr
+```
+
+Start the container:
+
+```bash
+docker compose up -d --build
+```
+
+Enter the container:
+
+```bash
+docker exec -it torrentarr bash
+```
+
+Run Torrentarr:
+
+```bash
+./torrent_creator.sh
+```
+
+---
+
+# Project Layout
+
+```
 Torrentarr/
+├─ assets/
+│  ├─ icon.png
+│  └─ logo.png
 ├─ Dockerfile
 ├─ docker-compose.yml
 ├─ config.env
@@ -73,4 +119,25 @@ Torrentarr/
    ├─ common.sh
    ├─ movies.sh
    └─ series.sh
+```
 
+---
+
+# Requirements
+
+* Docker
+* Radarr
+* Sonarr
+* Media files already organized by the *arr ecosystem
+
+---
+
+# Roadmap
+
+Future improvements planned:
+
+* TUI interface
+* automatic batch processing
+* tracker profile support
+* improved metadata detection
+* Unraid template
