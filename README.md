@@ -13,7 +13,6 @@ Pack • Share • Automate
   <img src="https://img.shields.io/badge/Radarr-compatible-orange">
   <img src="https://img.shields.io/badge/Sonarr-compatible-yellow">
 </p>
-```
 
 ------------------------------------------------------------------------
 
