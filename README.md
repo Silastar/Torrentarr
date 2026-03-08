@@ -156,10 +156,10 @@ Example:
 MEDIA_ROOT=/MEDIA
 OUTPUT_ROOT=/TORRENTS
 
-RADARR_URL=http://192.168.1.127:2250
+RADARR_URL=http://radarr_url:radarr_port
 RADARR_API_KEY=your_radarr_api_key
 
-SONARR_URL=http://192.168.1.127:2252
+SONARR_URL=http://sonarr_url:sonarr_port
 SONARR_API_KEY=your_sonarr_api_key
 
 ANNOUNCE=https://your-tracker/announce/xxxxxxxx
