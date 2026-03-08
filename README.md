@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" width="500">
+  <img src="assets/logo.png" width="500" alt="Torrentarr logo">
 </p>
 
 <h1 align="center">Torrentarr</h1>
@@ -9,14 +9,12 @@
 </p>
 
 <p align="center">
-
-![Stars](https://img.shields.io/github/stars/Silastar-1976/Torrentarr?style=social)
-![License](https://img.shields.io/github/license/Silastar-1976/Torrentarr)
-![Docker](https://img.shields.io/badge/docker-ready-blue)
-![Bash](https://img.shields.io/badge/bash-script-green)
-![Radarr](https://img.shields.io/badge/Radarr-compatible-orange)
-![Sonarr](https://img.shields.io/badge/Sonarr-compatible-yellow)
-
+  <img src="https://img.shields.io/github/stars/Silastar/Torrentarr?style=social" alt="GitHub stars">
+  <img src="https://img.shields.io/github/license/Silastar/Torrentarr" alt="GitHub license">
+  <img src="https://img.shields.io/badge/docker-ready-blue" alt="Docker ready">
+  <img src="https://img.shields.io/badge/bash-script-green" alt="Bash script">
+  <img src="https://img.shields.io/badge/Radarr-compatible-orange" alt="Radarr compatible">
+  <img src="https://img.shields.io/badge/Sonarr-compatible-yellow" alt="Sonarr compatible">
 </p>
 
 ---
@@ -36,9 +34,12 @@ It automates the creation of properly named torrents using the real metadata of 
 - [Configuration](#configuration)
 - [Usage](#usage)
 - [Release Naming](#release-naming)
+- [Example Output](#example-output)
 - [Project Layout](#project-layout)
 - [Requirements](#requirements)
 - [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
@@ -64,7 +65,7 @@ It is designed for private tracker upload workflows where releases must follow s
 
 Torrentarr scans media folders already organized by Radarr or Sonarr.
 
-The typical workflow is:
+Typical workflow:
 
 1. Select a movie or series folder
 2. Detect the main media file
@@ -76,250 +77,40 @@ The typical workflow is:
 
 ---
 
-## Configuration
-
-Torrentarr uses a configuration file named:
-
-```bash
-config.env
-
-This file defines all runtime settings used by the container and the scripts.
-
-Main configuration areas
-
-Media source paths
-
-Torrent output paths
-
-Radarr API connection
-
-Sonarr API connection
-
-Tracker announce URL
-
-Naming preferences
-
-Staging and behavior options
-
-Example settings
-MEDIA_ROOT=/MEDIA
-OUTPUT_ROOT=/TORRENTS
-
-RADARR_URL=http://192.168.1.127:2250
-RADARR_API_KEY=your_radarr_api_key
-
-SONARR_URL=http://192.168.1.127:2252
-SONARR_API_KEY=your_sonarr_api_key
-
-ANNOUNCE=https://your-tracker/announce/xxxxxxxx
-PRIVATE_FLAG=1
-
-DEFAULT_TEAM=NOTAG
-PREFERRED_LANG_MULTI=MULTI
-
-USE_STAGING=1
-STAGING_DIR=/MEDIA/.torrentarr-staging
-SHOW_PROGRESS=1
-SKIP_EXISTING=1
-DRY_RUN=0
-Notes
-
-MEDIA_ROOT is the root folder where your media library is mounted
-
-OUTPUT_ROOT is where generated .torrent and .nfo files will be written
-
-ANNOUNCE must match your private tracker announce URL
-
-DRY_RUN=1 allows testing without creating real torrent files
-
-USE_STAGING=1 enables a temporary clean payload directory before torrent creation
-
----
-
-## Usage
-
-Start the container:
-
-```bash
-docker compose up -d --build
-
-Enter the container:
-
-docker exec -it torrentarr bash
-
-Run Torrentarr:
-
-./torrent_creator.sh
-
-Main Menu
-
-Torrentarr provides an interactive menu:
-
-1) Movies
-2) Series
-0) Quit
-Movies
-
-In movie mode, Torrentarr can:
-
-process a single movie folder
-
-process a full movie root in batch mode
-
-Series
-
-In series mode, Torrentarr can:
-
-preview the release plan for a series
-
-generate releases for one series
-
-batch process a full series root
-
-Depending on the series status, Torrentarr can generate:
-
-full series packs
-
-season packs
-
-episode releases
-
----
-
-## Release Naming
-
-Torrentarr generates tracker-compliant release names based on the detected metadata from the media file.
-
-A generated release name may include:
-
-- Title
-- Year
-- Language tag
-- Resolution
-- Source
-- HDR or Dolby Vision flags
-- Audio codec
-- Channel layout
-- Video codec
-- Release group
-
-### Example Movie Release
-
-```text
-Dune.Part.Two.2024.MULTI.2160p.WEB-DL.DV.HDR10.EAC3.Atmos.5.1.x265-Torrentarr
-
-### Example Series Release
-
-The.Last.of.Us.S01.MULTI.1080p.WEB-DL.EAC3.5.1.H264-Torrentarr
-
-### Example Episode Release
-
-The.Last.of.Us.S01E01.MULTI.1080p.WEB-DL.EAC3.5.1.H264-Torrentarr
-
-### Naming behavior depends on:
-
-detected media metadata
-
-available audio and subtitle languages
-
-source quality
-
-tracker naming expectations
-
-configured default team or release group
-
----
-
-## Example Output
-
-After processing a movie or episode, Torrentarr generates a release folder ready for upload.
-
-Example movie release structure:
-
-```text
-Dune.Part.Two.2024.MULTI.2160p.WEB-DL.DV.HDR10.EAC3.Atmos.5.1.x265-Torrentarr
-├── Dune.Part.Two.2024.MULTI.2160p.WEB-DL.DV.HDR10.EAC3.Atmos.5.1.x265.mkv
-├── Dune.Part.Two.2024.MULTI.2160p.WEB-DL.DV.HDR10.EAC3.Atmos.5.1.x265-Torrentarr.nfo
-└── Dune.Part.Two.2024.MULTI.2160p.WEB-DL.DV.HDR10.EAC3.Atmos.5.1.x265-Torrentarr.torrent
-
-### Example series season pack:
-
-The.Last.of.Us.S01.MULTI.1080p.WEB-DL.EAC3.5.1.H264-Torrentarr
-├── S01E01.mkv
-├── S01E02.mkv
-├── S01E03.mkv
-├── The.Last.of.Us.S01.MULTI.1080p.WEB-DL.EAC3.5.1.H264-Torrentarr.nfo
-└── The.Last.of.Us.S01.MULTI.1080p.WEB-DL.EAC3.5.1.H264-Torrentarr.torrent
-
-### Torrentarr automatically generates:
-
-the .torrent file
-
-the .nfo file using MediaInfo
-
-a tracker-compliant release name
-
----
-
-## Contributing
-
-Contributions are welcome.
-
-If you want to improve Torrentarr:
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Open a Pull Request
-
-Bug reports and feature requests can be submitted using GitHub Issues.
-
----
-
-## License
-
-This project is currently provided without a formal license.
-
-A license will be added in a future release.
-
-# Features
+## Features
 
 ### Movies
 
-* Match movie folders against Radarr
-* Read media metadata automatically
-* Generate tracker-style release names
-* Create `.torrent`
-* Create `.nfo`
+- Match movie folders against Radarr
+- Read media metadata automatically
+- Generate tracker-style release names
+- Create `.torrent`
+- Create `.nfo`
 
 ### Series
 
-* Match series folders against Sonarr
-* Generate:
+- Match series folders against Sonarr
+- Generate season packs, episode torrents, and full series packs
+- Use majority metadata for packs
+- Create `.torrent`
+- Create `.nfo`
 
-  * season packs
-  * episode torrents
-  * full series packs for ended shows
-* Use majority metadata for packs
-* Create `.torrent`
-* Create `.nfo`
+### Media Detection
 
-### Media detection
-
-* Resolution: `720p`, `1080p`, `2160p`
-* Video: `H264`, `x265`
-* Audio: `AAC`, `AC3`, `EAC3`, `TrueHD`, `DTS`, `DTS-HD`, `DTS-HD.MA`, `Atmos`
-* HDR: `DV`, `HDR`, `HDR10`, `HDR10PLUS`, `HLG`
-* Source: `WEB`, `WEB-DL`, `WEBRip`, `BluRay`, `Remux`, `HDTV`, `DVDRip`
+- Resolution: `720p`, `1080p`, `2160p`
+- Video: `H264`, `x265`
+- Audio: `AAC`, `AC3`, `EAC3`, `TrueHD`, `DTS`, `DTS-HD`, `DTS-HD.MA`, `Atmos`
+- HDR: `DV`, `HDR`, `HDR10`, `HDR10PLUS`, `HLG`
+- Source: `WEB`, `WEB-DL`, `WEBRip`, `BluRay`, `Remux`, `HDTV`, `DVDRip`
 
 ---
 
-# Installation
+## Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/Silastar-1976/Torrentarr.git
+git clone https://github.com/Silastar/Torrentarr.git
 cd Torrentarr
 ```
 
@@ -343,7 +134,111 @@ Run Torrentarr:
 
 ---
 
-# Project Layout
+## Configuration
+
+Torrentarr uses a configuration file:
+
+```
+config.env
+```
+
+This file defines runtime settings such as:
+
+- Media paths
+- Output directories
+- Radarr API settings
+- Sonarr API settings
+- Tracker announce URL
+
+Example:
+
+```env
+MEDIA_ROOT=/MEDIA
+OUTPUT_ROOT=/TORRENTS
+
+RADARR_URL=http://192.168.1.127:2250
+RADARR_API_KEY=your_radarr_api_key
+
+SONARR_URL=http://192.168.1.127:2252
+SONARR_API_KEY=your_sonarr_api_key
+
+ANNOUNCE=https://your-tracker/announce/xxxxxxxx
+PRIVATE_FLAG=1
+```
+
+---
+
+## Usage
+
+Run the tool inside the container:
+
+```bash
+./torrent_creator.sh
+```
+
+Main menu:
+
+```
+1) Movies
+2) Series
+0) Quit
+```
+
+Movie mode allows:
+
+- single movie processing
+- batch processing
+
+Series mode allows:
+
+- full series packs
+- season packs
+- individual episode releases
+
+---
+
+## Release Naming
+
+Torrentarr builds tracker-compliant release names based on detected metadata.
+
+Example:
+
+```
+Dune.Part.Two.2024.MULTI.2160p.WEB-DL.DV.HDR10.EAC3.Atmos.5.1.x265-Torrentarr
+```
+
+Naming may include:
+
+- resolution
+- source
+- HDR flags
+- audio codec
+- channel layout
+- video codec
+- release group
+
+---
+
+## Example Output
+
+Example movie release structure:
+
+```
+Dune.Part.Two.2024.MULTI.2160p.WEB-DL.DV.HDR10.EAC3.Atmos.5.1.x265-Torrentarr
+├── Dune.Part.Two.2024.mkv
+├── Dune.Part.Two.2024-Torrentarr.nfo
+└── Dune.Part.Two.2024-Torrentarr.torrent
+```
+
+Torrentarr automatically generates:
+
+- `.torrent` file
+- `.nfo` file
+- release folder ready for upload
+
+---
+
+## Project Layout
 
 ```
 Torrentarr/
@@ -364,21 +259,41 @@ Torrentarr/
 
 ---
 
-# Requirements
+## Requirements
 
-* Docker
-* Radarr
-* Sonarr
-* Media files already organized by the *arr ecosystem
+- Docker
+- Radarr
+- Sonarr
+- Media files organized by the *arr ecosystem
 
 ---
 
-# Roadmap
+## Roadmap
 
-Future improvements planned:
+Planned improvements:
 
-* TUI interface
-* automatic batch processing
-* tracker profile support
-* improved metadata detection
-* Unraid template
+- Terminal UI (TUI)
+- batch processing improvements
+- tracker profile support
+- better metadata detection
+- Unraid template
+
+---
+
+## Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
+
+Bug reports and feature requests can be submitted using GitHub Issues.
+
+---
+
+## License
+
+This project is currently provided without a formal license.
+A license will be added in a future release.
