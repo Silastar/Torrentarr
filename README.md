@@ -1,23 +1,17 @@
 # Torrentarr
 
-**Pack • Share • Automate**
+Pack • Share • Automate
 
-```{=html}
 <p align="center">
-```
-`<img src="assets/logo.png" width="500">`{=html}
-```{=html}
+  <img src="assets/logo.png" width="500">
 </p>
-```
-```{=html}
+
 <p align="center">
-```
-`<img src="https://img.shields.io/github/stars/Silastar/Torrentarr?style=social">`{=html}
-`<img src="https://img.shields.io/badge/docker-ready-blue">`{=html}
-`<img src="https://img.shields.io/badge/bash-script-green">`{=html}
-`<img src="https://img.shields.io/badge/Radarr-compatible-orange">`{=html}
-`<img src="https://img.shields.io/badge/Sonarr-compatible-yellow">`{=html}
-```{=html}
+  <img src="https://img.shields.io/github/stars/Silastar/Torrentarr?style=social">
+  <img src="https://img.shields.io/badge/docker-ready-blue">
+  <img src="https://img.shields.io/badge/bash-script-green">
+  <img src="https://img.shields.io/badge/Radarr-compatible-orange">
+  <img src="https://img.shields.io/badge/Sonarr-compatible-yellow">
 </p>
 ```
 
