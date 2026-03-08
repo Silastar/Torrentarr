@@ -228,6 +228,60 @@ tracker naming expectations
 
 configured default team or release group
 
+---
+
+## Example Output
+
+After processing a movie or episode, Torrentarr generates a release folder ready for upload.
+
+Example movie release structure:
+
+```text
+Dune.Part.Two.2024.MULTI.2160p.WEB-DL.DV.HDR10.EAC3.Atmos.5.1.x265-Torrentarr
+├── Dune.Part.Two.2024.MULTI.2160p.WEB-DL.DV.HDR10.EAC3.Atmos.5.1.x265.mkv
+├── Dune.Part.Two.2024.MULTI.2160p.WEB-DL.DV.HDR10.EAC3.Atmos.5.1.x265-Torrentarr.nfo
+└── Dune.Part.Two.2024.MULTI.2160p.WEB-DL.DV.HDR10.EAC3.Atmos.5.1.x265-Torrentarr.torrent
+
+### Example series season pack:
+
+The.Last.of.Us.S01.MULTI.1080p.WEB-DL.EAC3.5.1.H264-Torrentarr
+├── S01E01.mkv
+├── S01E02.mkv
+├── S01E03.mkv
+├── The.Last.of.Us.S01.MULTI.1080p.WEB-DL.EAC3.5.1.H264-Torrentarr.nfo
+└── The.Last.of.Us.S01.MULTI.1080p.WEB-DL.EAC3.5.1.H264-Torrentarr.torrent
+
+### Torrentarr automatically generates:
+
+the .torrent file
+
+the .nfo file using MediaInfo
+
+a tracker-compliant release name
+
+---
+
+## Contributing
+
+Contributions are welcome.
+
+If you want to improve Torrentarr:
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
+
+Bug reports and feature requests can be submitted using GitHub Issues.
+
+---
+
+## License
+
+This project is currently provided without a formal license.
+
+A license will be added in a future release.
+
 # Features
 
 ### Movies
