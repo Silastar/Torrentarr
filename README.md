@@ -27,6 +27,21 @@ It automates the creation of properly named torrents using the real metadata of 
 
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [How It Works](#how-it-works)
+- [Features](#features)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Release Naming](#release-naming)
+- [Project Layout](#project-layout)
+- [Requirements](#requirements)
+- [Roadmap](#roadmap)
+
+---
+
 # Features
 
 ### Movies
