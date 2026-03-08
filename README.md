@@ -1,14 +1,3 @@
-# Torrentarr v5
-
-![Version](https://img.shields.io/github/v/release/Silastar/Torrentarr)
-![Stars](https://img.shields.io/github/stars/Silastar/Torrentarr?style=social)
-![License](https://img.shields.io/badge/license-not%20set-lightgrey)
-![GitHub Repo](https://img.shields.io/github/stars/Silastar/Torrentarr?style=social)
-
-<p align="center">
-  <img src="assets/logo.png" width="500">
-</p>
-
 # Torrentarr
 
 **Pack • Share • Automate**
