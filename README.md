@@ -76,6 +76,66 @@ The typical workflow is:
 
 ---
 
+## Configuration
+
+Torrentarr uses a configuration file named:
+
+```bash
+config.env
+
+This file defines all runtime settings used by the container and the scripts.
+
+Main configuration areas
+
+Media source paths
+
+Torrent output paths
+
+Radarr API connection
+
+Sonarr API connection
+
+Tracker announce URL
+
+Naming preferences
+
+Staging and behavior options
+
+Example settings
+MEDIA_ROOT=/MEDIA
+OUTPUT_ROOT=/TORRENTS
+
+RADARR_URL=http://192.168.1.127:2250
+RADARR_API_KEY=your_radarr_api_key
+
+SONARR_URL=http://192.168.1.127:2252
+SONARR_API_KEY=your_sonarr_api_key
+
+ANNOUNCE=https://your-tracker/announce/xxxxxxxx
+PRIVATE_FLAG=1
+
+DEFAULT_TEAM=NOTAG
+PREFERRED_LANG_MULTI=MULTI
+
+USE_STAGING=1
+STAGING_DIR=/MEDIA/.torrentarr-staging
+SHOW_PROGRESS=1
+SKIP_EXISTING=1
+DRY_RUN=0
+Notes
+
+MEDIA_ROOT is the root folder where your media library is mounted
+
+OUTPUT_ROOT is where generated .torrent and .nfo files will be written
+
+ANNOUNCE must match your private tracker announce URL
+
+DRY_RUN=1 allows testing without creating real torrent files
+
+USE_STAGING=1 enables a temporary clean payload directory before torrent creation
+
+---
+
 # Features
 
 ### Movies
