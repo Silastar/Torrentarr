@@ -1,7 +1,3 @@
-# Torrentarr
-
-**Pack • Share • Automate**
-
 <p align="center">
   <img src="assets/logo.png" width="500">
 </p>
@@ -13,13 +9,14 @@
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/github/v/release/Silastar-1976/Torrentarr">
-<img src="https://img.shields.io/github/stars/Silastar-1976/Torrentarr?style=social">
-<img src="https://img.shields.io/github/license/Silastar-1976/Torrentarr">
-<img src="https://img.shields.io/badge/docker-ready-blue">
-<img src="https://img.shields.io/badge/bash-script-green">
-<img src="https://img.shields.io/badge/Radarr-compatible-orange">
-<img src="https://img.shields.io/badge/Sonarr-compatible-yellow">
+
+![Stars](https://img.shields.io/github/stars/Silastar-1976/Torrentarr?style=social)
+![License](https://img.shields.io/github/license/Silastar-1976/Torrentarr)
+![Docker](https://img.shields.io/badge/docker-ready-blue)
+![Bash](https://img.shields.io/badge/bash-script-green)
+![Radarr](https://img.shields.io/badge/Radarr-compatible-orange)
+![Sonarr](https://img.shields.io/badge/Sonarr-compatible-yellow)
+
 </p>
 
 ---
