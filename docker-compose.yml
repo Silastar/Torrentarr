@@ -11,7 +11,7 @@ services:
       - ./config.env
     volumes:
       - /path/to/your/media:/MEDIA:rw
-      - /output/for/your/torrents:/TORRENTS:/TORRENTS:rw
+      - /output/for/your/torrents:/TORRENTS:rw
       - /mnt/user/appdata/torrent-creator:/config:rw
       - /tmp:/tmp
     restart: "no"
