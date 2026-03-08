@@ -105,23 +105,16 @@ services:
       - ./config.env:/config.env
 ```
 
-## Path Explanation
+### Path Explanation
 
-  -----------------------------------------------------------------------
-  Container Path                                  Purpose
-  ----------------------------------------------- -----------------------
-  /MEDIA                                          Root folder containing
-                                                  Radarr and Sonarr media
-                                                  libraries
-
-  /TORRENTS                                       Output directory where
-                                                  `.torrent` and `.nfo`
-                                                  files are written
-  -----------------------------------------------------------------------
+| Container Path | Purpose |
+|---------------|--------|
+| `/MEDIA` | Root folder containing your Radarr and Sonarr media libraries |
+| `/TORRENTS` | Output directory where `.torrent` and `.nfo` files are written |
 
 ### Important
 
-The **left side paths must match your actual server filesystem.**
+The paths on the **left side** must match your actual server filesystem.
 
 ### Example Unraid
 
