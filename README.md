@@ -157,7 +157,7 @@ docker compose up -d --build
 
 Planned improvements:
 
--   TUI interface
+-   UI interface
 -   Automatic batch processing
 -   Tracker profile support
 -   Improved metadata detection
