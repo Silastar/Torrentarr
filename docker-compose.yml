@@ -8,8 +8,8 @@ services:
     env_file:
       - ./config.env
     volumes:
-      - /mnt/user/MEDIA:/MEDIA:rw
-      - /mnt/user/TORRENT_MGMT/TORRENT_FILES/TORRENTS_UPLOAD:/TORRENTS:rw
+      - /path/to/your/media:/MEDIA:rw
+      - /output/for/your/torrents:/TORRENTS:rw
       - /mnt/user/appdata/torrent-creator:/config:rw
       - /tmp:/tmp
     restart: "no"
