@@ -42,6 +42,24 @@ It automates the creation of properly named torrents using the real metadata of 
 
 ---
 
+## Overview
+
+Torrentarr is a command-line tool designed to automate the creation of properly formatted torrent releases from media already managed by the *arr ecosystem.
+
+It reads metadata directly from media files and generates tracker-ready releases including:
+
+- `.torrent` files
+- `.nfo` files
+
+Torrentarr integrates naturally with:
+
+- **Radarr** for movies
+- **Sonarr** for series
+
+It is designed for private tracker upload workflows where releases must follow strict naming conventions.
+
+---
+
 # Features
 
 ### Movies
