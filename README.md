@@ -5,6 +5,16 @@
 ![License](https://img.shields.io/badge/license-not%20set-lightgrey)
 ![GitHub Repo](https://img.shields.io/github/stars/Silastar/Torrentarr?style=social)
 
+<p align="center">
+  <img src="assets/logo.png" width="500">
+</p>
+
+# Torrentarr
+
+**Pack • Share • Automate**
+
+Torrentarr is a Dockerized tool that generates tracker-ready `.torrent` and `.nfo` files from media libraries managed by Radarr and Sonarr.
+
 `Torrentarr` is a Dockerized Bash tool that generates tracker-ready `.torrent` and `.nfo` files from media already managed by Radarr and Sonarr.
 
 It supports:
