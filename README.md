@@ -136,6 +136,98 @@ USE_STAGING=1 enables a temporary clean payload directory before torrent creatio
 
 ---
 
+## Usage
+
+Start the container:
+
+```bash
+docker compose up -d --build
+
+Enter the container:
+
+docker exec -it torrentarr bash
+
+Run Torrentarr:
+
+./torrent_creator.sh
+
+Main Menu
+
+Torrentarr provides an interactive menu:
+
+1) Movies
+2) Series
+0) Quit
+Movies
+
+In movie mode, Torrentarr can:
+
+process a single movie folder
+
+process a full movie root in batch mode
+
+Series
+
+In series mode, Torrentarr can:
+
+preview the release plan for a series
+
+generate releases for one series
+
+batch process a full series root
+
+Depending on the series status, Torrentarr can generate:
+
+full series packs
+
+season packs
+
+episode releases
+
+---
+
+## Release Naming
+
+Torrentarr generates tracker-compliant release names based on the detected metadata from the media file.
+
+A generated release name may include:
+
+- Title
+- Year
+- Language tag
+- Resolution
+- Source
+- HDR or Dolby Vision flags
+- Audio codec
+- Channel layout
+- Video codec
+- Release group
+
+### Example Movie Release
+
+```text
+Dune.Part.Two.2024.MULTI.2160p.WEB-DL.DV.HDR10.EAC3.Atmos.5.1.x265-Torrentarr
+
+### Example Series Release
+
+The.Last.of.Us.S01.MULTI.1080p.WEB-DL.EAC3.5.1.H264-Torrentarr
+
+### Example Episode Release
+
+The.Last.of.Us.S01E01.MULTI.1080p.WEB-DL.EAC3.5.1.H264-Torrentarr
+
+### Naming behavior depends on:
+
+detected media metadata
+
+available audio and subtitle languages
+
+source quality
+
+tracker naming expectations
+
+configured default team or release group
+
 # Features
 
 ### Movies
