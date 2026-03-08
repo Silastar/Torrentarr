@@ -2,6 +2,8 @@ services:
   torrentarr:
     build: .
     container_name: torrentarr
+    labels:
+    - "net.unraid.docker.icon=/mnt/user/appdata/torrentarr/icon.png"
     stdin_open: true
     tty: true
     working_dir: /config
