@@ -60,6 +60,22 @@ It is designed for private tracker upload workflows where releases must follow s
 
 ---
 
+## How It Works
+
+Torrentarr scans media folders already organized by Radarr or Sonarr.
+
+The typical workflow is:
+
+1. Select a movie or series folder
+2. Detect the main media file
+3. Read metadata using MediaInfo
+4. Build a tracker-compliant release name
+5. Generate a `.torrent` file
+6. Generate a `.nfo` file
+7. Prepare the release folder ready for upload
+
+---
+
 # Features
 
 ### Movies
