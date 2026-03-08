@@ -1,5 +1,7 @@
 # secrets
 config.env
+*.log
+.fuse_hidden*
 
 # generated files
 *.torrent
