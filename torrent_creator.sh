@@ -19,14 +19,17 @@ main_menu() {
     echo "MEDIA_ROOT  : $MEDIA_ROOT"
     echo "OUTPUT_ROOT : $OUTPUT_ROOT"
     echo "DRY_RUN     : $DRY_RUN"
+    echo "PIECES      : $(current_piece_size_label)"
     echo "----------------------------------------------------"
     echo " 1) Movies"
     echo " 2) Series"
+    echo " 3) Hash piece size"
     echo " 0) Quit"
     read -r -p "Select: " c
     case "$c" in
       1) movies_menu ;;
       2) series_menu ;;
+      3) configure_piece_size_menu ;;
       0) exit 0 ;;
       *) echo "Invalid" ;;
     esac

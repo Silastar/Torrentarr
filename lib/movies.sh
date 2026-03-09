@@ -563,11 +563,17 @@ create_movie_release() {
     *) return 1 ;;
   esac
 
-  payload_dir="$(get_payload_dir "$movie_dir")" || return 1
-  piece="$(choose_piece_size "$payload_dir")"
+  local source_nfo
+  source_nfo="$movie_dir/${release_name}.nfo"
 
   status "NFO"
   write_nfo "$main_video" "$out_nfo"
+  cp -f "$out_nfo" "$source_nfo"
+  fix_output_permissions "$out_nfo" "$source_nfo"
+  fix_output_permissions "$movie_dir" "$out_dir"
+
+  payload_dir="$(prepare_release_payload "$movie_dir" "$(basename "$movie_dir")" "$source_nfo" "$main_video" "$source_nfo")" || return 1
+  piece="$(choose_piece_size "$payload_dir")"
 
   status "TORRENT"
   if ! build_torrent "$payload_dir" "$out_torrent" "$piece"; then
@@ -582,6 +588,7 @@ create_movie_release() {
   echo "Done:"
   echo " - $out_torrent"
   echo " - $out_nfo"
+  print_recheck_hint "$payload_dir" "$movie_dir"
 }
 
 batch_movies_root() {
