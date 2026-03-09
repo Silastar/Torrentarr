@@ -6,6 +6,12 @@ config.env
 # generated files
 *.torrent
 *.nfo
+TORRENTS/
+
+# caches
+mediainfo_cache/
+tmp/
+.cache/
 
 # logs
 *.log
